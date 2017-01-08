@@ -16,7 +16,7 @@ def main():
     frames = 60
 
     #Superficie do Jogo
-    jogo = pygame.Surface()
+    jogo = pygame.Surface((largura, altura))
 
     player1 = players.Player()
 
@@ -32,7 +32,9 @@ def main():
         relogio.tick(frames)
         #Pintar
         tela.fill(vermelho)
-        player1.pintar(tela)
+        jogo.fill(branco)
+        tela.blit(jogo, (0, 0))
+        player1.pintar(jogo)
 
 
 
